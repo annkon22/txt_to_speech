@@ -15,7 +15,7 @@ class TextToSpeech:
             for line in file:
                 if not line.startswith(';;;'):
                     key, val = line.split('  ',2)
-                    self._l[key] = re.findall(r"[A-Z/a-z]+",val)
+                    self._l[key] = re.findall(r"[A-Z\a-z\_]+",val)
 
     def get_pronunciation(self, str_input):
         list_pron = []
